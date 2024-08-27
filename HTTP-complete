@@ -1,0 +1,75 @@
+REQUEST SHOULD IN JSON/SML
+
+
+
+HTTP method
+The HTTP method represents the action the client expects the server to perform on the resource. The common HTTP request methods are:
+
+GET: Indicates that the client is trying to fetch a specific resource from the server.
+POST: Indicates that the client is trying to add new data, which needs to be processed by the server.
+PUT: Indicates that the client would like to update an existing resource on the server.
+DELETE: Indicates that the client is trying to delete a resource from the server.
+URL
+The URL points to the specific resource the client wants to access. An HTTP URL includes a scheme (HTTP),
+a domain name, an optional path parameter, optional query parameters, and optional anchors. 
+Let’s take the following URL, for example:
+
+https://learning.postman.com/docs/introduction/overview/#getting-started
+
+This URL can be broken down into the following components:
+
+Scheme: https
+Domain: learning.postman.com
+Path: /docs/introduction/overview
+Anchor: #getting-started
+
+HTTP VERSION:
+HTTP/1.1: LINEAR REQUEST/ RESPONSE ,HEADERS WITH EVERY REQUEST
+Request/Response Model: HTTP/1.1 uses a linear request/response model. This means each request from a browser is handled one at a time in sequence.
+If you request multiple resources (like images or scripts) from a web page, each request is sent separately and waits for the previous one to complete.
+Connection Limitations: Due to this linear approach, browsers are limited in how many simultaneous requests they can send over a single connection (typically around 6 per domain). 
+To work around this, browsers often open multiple connections to the same server, which can lead to inefficiencies and increased load times.
+
+Header Redundancy: HTTP/1.1 headers (like cookies or content types) are sent with every request,
+even if they’re repeated, which adds unnecessary overhead.
+
+HTTP/2:MULTIPLEXING AND BINARY FORMAT ,EFFIECIENCT
+Multiplexing: HTTP/2 introduces multiplexing, which allows multiple requests and responses to be sent over a single connection simultaneously. This means a browser can request multiple resources at once without waiting for each request to finish, leading to faster loading times.
+
+Header Compression: HTTP/2 uses a technique called header compression to reduce the size of headers. It compresses header data so that repetitive and redundant header information doesn’t need to be sent in full each time, further speeding up data transfer.
+
+Binary Protocol: Unlike HTTP/1.1, which is text-based, HTTP/2 uses a binary protocol. This binary format is more efficient for machines to parse and process, reducing the overhead associated with text-based protocols
+
+
+
+HTTP REQUESTS:
+
+
+In HTTP requests like POST and PUT, where a new record is being created or modified on the server, 
+a request body can carry data to be sent to the server, often in formats like JSON, XML, or form data.
+The below is an example of an HTTP request with a JSON request body:
+
+POST /api/resource HTTP/1.1
+Host: example.com
+Content-Type: application/json
+Content-Length: 35
+
+{
+  "key1": "value1",
+  "key2": "value2"
+}.
+
+HTTP RESPONSE: IN status code :200 eg
+{
+  "200": {
+    "status": "OK",
+    "description": "The request was successful, and the server has returned the requested resource."
+  },
+  "301": {
+    "status": "Moved Permanently",
+    "description": "The requested resource has been permanently moved to a new URL. The new URL is provided in the Location header."
+  },
+  "400": {
+    "status": "Bad Request",
+    "description": "The server could not understand the request due to invalid syntax."
+  },
