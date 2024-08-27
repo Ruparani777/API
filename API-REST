@@ -1,0 +1,66 @@
+Example Scenario:
+Imagine you’re building a weather app. Here’s how you might use an API:
+
+Request: You send a GET request to https://api.weather.com/current?city=NewYork.
+Response: The API returns data like:
+json
+Copy code
+{
+  "city": "New York",
+  "temperature": "25°C",
+  "condition": "Cloudy"
+}
+Usage: Your app displays “25°C and Cloudy” to the user for New York.
+
+
+REST API:
+Example of a REST API:
+Imagine you’re working with a REST API for managing a list of books.
+
+Retrieve a List of Books (GET):
+
+Request: GET https://api.example.com/books
+Response:
+json
+Copy code
+[
+  {"id": 1, "title": "1984", "author": "George Orwell"},
+  {"id": 2, "title": "To Kill a Mockingbird", "author": "Harper Lee"}
+]
+Retrieve a Specific Book (GET):
+
+Request: GET https://api.example.com/books/1
+Response:
+json
+Copy code
+{"id": 1, "title": "1984", "author": "George Orwell"}
+Add a New Book (POST):
+
+Request: POST https://api.example.com/books
+Body:
+json
+Copy code
+{"title": "Brave New World", "author": "Aldous Huxley"}
+Response:
+json
+Copy code
+{"id": 3, "title": "Brave New World", "author": "Aldous Huxley"}
+Update a Book (PUT):
+
+Request: PUT https://api.example.com/books/1
+Body:
+json
+Copy code
+{"title": "1984", "author": "George Orwell", "published": "1949"}
+Response:
+json
+Copy code
+{"id": 1, "title": "1984", "author": "George Orwell", "published": "1949"}
+Delete a Book (DELETE):
+
+Request: DELETE https://api.example.com/books/1
+Response: 204 No Content
+Why Use REST APIs?
+Scalability: REST’s stateless nature helps in scaling applications by distributing requests across multiple servers.
+Simplicity: Using standard HTTP methods and status codes makes REST APIs easy to understand and implement.
+Flexibility: REST APIs can handle a variety of data formats and are not tied to any specific client technology.
