@@ -1,0 +1,33 @@
+
+TCP:
+TCP (Transmission Control Protocol) is a fundamental part of how data is sent over the internet. 
+It ensures that data is transferred reliably by breaking it into packets, sending them to the destination, and then reassembling them in the correct order. 
+If any packets are lost or corrupted, TCP detects this and retransmits them, ensuring that the complete and accurate data arrives at the destination. 
+It's like a detailed, methodical delivery service that guarantees everything arrives as intended.
+
+1.Establishing a TCP Connection:
+
+Client Initiates Connection: The client (e.g., your web browser) starts by opening a TCP connection to the server. This involves a three-way handshake:
+SYN: The client sends a SYN (synchronize) packet to the server to initiate a connection.
+SYN-ACK: The server responds with a SYN-ACK (synchronize-acknowledge) packet, confirming the receipt and agreeing to the connection.
+ACK: The client sends an ACK (acknowledge) packet to complete the handshake, and the connection is established.
+
+2.Request Line: The request line specifies the HTTP method, the path to the resource, and the HTTP version. For example, a GET request might look like this: GET /index.html HTTP/1.1.
+
+HTTP Method: Indicates the action to be performed (e.g., GET to retrieve data, POST to submit data).
+Request Path: The path to the resource on the server (e.g., /index.html).
+HTTP Version: Specifies the version of HTTP being used (e.g., HTTP/1.1).
+Server Processing:
+
+Receiving the Request: The server receives the HTTP request over the TCP connection and begins processing it.
+Generating a Response: After processing the request (e.g., fetching data from a database), the server generates an HTTP response. This response includes:
+Status Line: Contains the HTTP version, status code (e.g., 200 OK), and a status message.
+Response Headers: Provide information about the response (e.g., Content-Type, Content-Length).
+Response Body: Contains the requested data or content (e.g., HTML, JSON).
+Sending the HTTP Response:
+
+Transmitting the Response: The server sends the HTTP response back to the client over the same TCP connection.
+Closing the Connection:
+
+Connection Management: After the response is fully sent and received, the TCP connection may be closed if it's a non-persistent connection. For persistent connections (HTTP/1.1 or later), the connection might remain open for additional requests.
+In essence, TCP ensures that data is transmitted reliably and in the correct order, wh
